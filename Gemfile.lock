@@ -94,6 +94,7 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    ffaker (2.21.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  ffaker (~> 2.21)
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8, >= 1.8.1)

@@ -1,0 +1,9 @@
+<h1><%= @chat.name %></h1>
+
+<p>Current user: <%= Current.user.name %></p>
+
+<% @chat.messages.includes(:user).each do |msg| %>
+  <article>
+    <%= render msg %>
+  </article>
+<% end %>

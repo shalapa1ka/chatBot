@@ -14,4 +14,10 @@ Rails.application.routes.draw do
   end
 
   get :home, to: 'home#index'
+
+  resources :chats, only: %i[index show] do
+    resources :messages, only: %i[create update destroy]
+  end
+
+  root to: 'chats#index'
 end
