@@ -26,4 +26,8 @@ class User < ApplicationRecord
   after_update if: :password_digest_previously_changed? do
     sessions.where.not(id: Current.session).destroy_all
   end
+
+  def self.chat_gpt
+    User.find_by(email: 'chat@gpt.com')
+  end
 end

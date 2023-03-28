@@ -1,2 +1,3 @@
 <%= turbo_stream.append 'messages', partial: 'messages/message', locals: { message: @message } %>
+<%= turbo_stream.append 'messages', partial: 'messages/message', locals: { message: @response } %>
 <%= prepend_flash %>

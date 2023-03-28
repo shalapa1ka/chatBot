@@ -1,8 +1,11 @@
 class MessagesController < ApplicationController
 
   def create
-    @message = Current.user.messages.new(message_params)
-    unless @message.save
+    @chatGPT = User.chat_gpt
+    @message = Current.user.messages.build(message_params)
+    @response = @chatGPT.messages.build body: ChatgptService.call(@message.body), chat_id: @message.chat_id
+
+    unless @message.save && @response.save
       @chat = @message.chat
       render 'chats/show'
     end

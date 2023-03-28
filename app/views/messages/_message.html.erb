@@ -1,7 +1,7 @@
 <%= turbo_frame_tag message do %>
   <%= tag.div class: "row mb-4" do %>
     <div class="col-1"><%= message.user.name %></div>
-    <div class="col-9" style="overflow-wrap: break-word;"><%= message.body %></div>
+    <div class="col-9" ><%= message.body %></div>
     <div class="col-2"><%= l message.created_at, format: :short %></div>
   <% end %>
 <% end %>
