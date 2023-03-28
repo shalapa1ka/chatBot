@@ -1,10 +1,9 @@
 <%= turbo_frame_tag message do %>
-  <%= tag.section data: { user: message.user.id,
-                          'messages-target': 'message' } do %>
-    <small><%= l message.created_at, format: :long %></small><br>
-    <small><%= l message.updated_at, format: :long %></small>
-
-    <p><%= message.body %></p>
-    written by <%= message.user.email %>
+  <%= tag.div class: "row mb-4" do %>
+    <div class="col-1"><%= message.user.name %></div>
+    <div class="col-9" style="overflow-wrap: break-word;"><%= message.body %></div>
+    <div class="col-2"><%= l message.created_at, format: :short %></div>
   <% end %>
 <% end %>
+
+

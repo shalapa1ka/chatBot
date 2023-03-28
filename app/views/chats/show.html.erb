@@ -3,11 +3,9 @@
 <p>Current user: <%= Current.user.name %></p>
 
 <%= turbo_frame_tag 'messages' do %>
-  <table class="table table-dark table-striped">
-      <% @chat.messages.includes(:user).each do |msg| %>
-          <%= render msg %>
-      <% end %>
-  </table>
+    <% @chat.messages.includes(:user).each do |msg| %>
+        <%= render msg %>
+    <% end %>
 <% end %>
 
 <article class="mt-5">
