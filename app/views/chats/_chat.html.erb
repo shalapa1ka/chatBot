@@ -1,2 +1,4 @@
-<h3><%= link_to chat.name, chat_path(chat) %></h3>
-<hr>
+<li data-target="chats.chatItem" data-action="click->chats#selectChat" data-chat-id="<%= chat.id %>" class="nav-item">
+  <p class="nav-link text-white" style="cursor: pointer"><%= chat.name %></p>
+</li>
+

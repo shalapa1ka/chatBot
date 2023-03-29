@@ -1,13 +1,15 @@
-<h1><%= @chat.name %></h1>
+<div style="height: 90vh; overflow-y: scroll;">
+  <h1><%= @chat.name %></h1>
 
-<p>Current user: <%= Current.user.name %></p>
+  <p>Current user: <%= Current.user.name %></p>
 
-<%= turbo_frame_tag 'messages' do %>
+  <%= turbo_frame_tag 'messages' do %>
     <% @chat.messages.includes(:user).each do |msg| %>
-        <%= render msg %>
+      <%= render msg %>
     <% end %>
-<% end %>
+  <% end %>
 
-<article class="mt-5">
-  <%= render 'messages/form', message: @message %>
-</article>
+  <article class="mt-5">
+    <%= render 'messages/form', message: @message %>
+  </article>
+</div>
