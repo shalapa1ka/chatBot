@@ -1,4 +1,7 @@
 <li data-target="chats.chatItem" data-action="click->chats#selectChat" data-chat-id="<%= chat.id %>" class="nav-item">
-  <p class="nav-link text-white" style="cursor: pointer"><%= chat.name %></p>
+  <div class="d-flex justify-content-between nav-link text-white" style="cursor: pointer" >
+    <%= chat.name %>
+    <%= link_to :Delete, chat_path(chat), data: {turbo_method: :delete} %>
+  </div>
 </li>
 

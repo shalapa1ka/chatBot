@@ -9,8 +9,6 @@ class MessagesController < ApplicationController
       @chat = @message.chat
       render 'chats/show'
     end
-
-    flash.now[:success] = 'Message sent!'
   end
 
   private

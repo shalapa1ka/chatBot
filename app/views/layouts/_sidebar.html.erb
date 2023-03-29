@@ -1,11 +1,12 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 90vh">
   <span class="fs-4">ChatBot</span>
   <hr>
-  <ul class="nav nav-pills flex-column mb-auto">
+  <ul id="chats-list" class="nav nav-pills flex-column mb-auto">
     <%= render @chats %>
   </ul>
   <hr>
   <div class="dropdown">
+    <%= link_to 'New chat', chats_path, class: "dropdown-item", data: { turbo_method: :post } %>
     <%= link_to 'Log out', Current.session, class: "dropdown-item", data: { turbo_method: :delete } %>
   </div>
 </div>

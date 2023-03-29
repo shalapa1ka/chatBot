@@ -14,7 +14,6 @@ export default class extends Controller {
             if (!response.ok) {
                 throw new Error(`Something went wrong ${response.statusCode}`);
             }
-            console.log(await response.text)
             this.chatFrameTarget.innerHTML = await response.text;
 
         } catch (error) {
