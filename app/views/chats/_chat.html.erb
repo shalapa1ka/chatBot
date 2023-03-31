@@ -1,7 +1,7 @@
-<li data-target="chats.chatItem" data-action="click->chats#selectChat" data-chat-id="<%= chat.id %>" class="nav-item">
-  <div class="d-flex justify-content-between nav-link text-white" style="cursor: pointer" >
+<li data-chats-target="chatItem" data-action="click->chats#selectChat" data-chat-id="<%= chat.id %>" class="nav-item">
+  <div class="d-flex justify-content-between align-items-center nav-link text-white mask" style="cursor: pointer" >
     <%= chat.name %>
-    <%= link_to :Delete, chat_path(chat), data: {turbo_method: :delete} %>
+    <%= link_to :Delete, chat_path(chat), data: {turbo_method: :delete}, class: 'btn btn-sm btn-danger' %>
   </div>
 </li>
 
